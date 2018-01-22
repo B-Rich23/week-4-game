@@ -34,25 +34,28 @@
 
 		<!-- This div will include the random target number that is generated each game -->
 		<div>
-			<h3>Target Score: <span id="targetScore">0</span>
+			<h3>Target Score: <span id="targetscore">0</span>
   			</h3>
 		</div>
 
 		<!-- This div contains the wins/losses counters -->
 		<div>
-			<h3>Your Score: <span id="yourScore">0</span>
+			<h3>Your Score: 
   			</h3>
-
- 			 <br>
+  			<br>
+  			<h3>Wins: <span id="wins">0</span></h3>
+			<br>
+			<h3>Losses: <span id="losses">0</span></h3>
+ 			<br>
 		</div>
 
 
 		<!-- This div contains the four crystal images -->
 		<div class="crystals">
-			<img id="" src="" alt="">
-			<img id="" src="" alt="">
-			<img id="" src="" alt="">
-			<img id="" src="" alt="">
+			<img id="blue" src="assets/images/blue crystal.png" alt="blue crystal">
+			<img id="orange" src="assets/images/orange crystal.png" alt="orange crystal">
+			<img id="green" src="assets/images/green crystal.png" alt="green crystal">
+			<img id="red" src="assets/images/red crystal.png" alt="red crystal">
 		</div>
 
 		<!-- This div contains the this is your total sum line -->
@@ -62,9 +65,11 @@
 
 		<!-- This div contains your running sum total during each game -->
 		<div>
-			<h3><span id="yourScore">0</span>
+			<h3><span id="sum">0</span>
   			</h3>
 		</div>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/javascript/game.js"></script>
 	</body>
 </html>
