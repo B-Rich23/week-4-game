@@ -1,5 +1,6 @@
 // Variable for secret number array for each crystal
-var secretNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+var secretNumber = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+
 
 // Variable for sum of user's guesses
 var yourSum = 0; 
@@ -17,20 +18,23 @@ var reset= function() {
 var randomNum;
 
 // Undefined variable for blue crystal
-var blueCrystal;
+var blueCrystal = $('#crys1');
 
 // Undefined variable for orange crystal
-var orangeCrystal;
+var orangeCrystal = $('#crys2');
 
 // Undefined variable for green crystal
-var greenCrystal;
+var greenCrystal = $('#crys3');
 
 // Undefined variable for red crystal
-var redCrystal;
+var redCrystal = $('#crys4');
 
 // Undefined variable result
 var imageCrystal;
 
+var crystalValue;
+
+var crystalNumbers = [blueCrystal, orangeCrystal, greenCrystal, redCrystal]	
 
 
 // Event handler that starts game
@@ -39,39 +43,47 @@ $( document ).ready(function() {
 		randomNum = [Math.floor(Math.random() * 101) + 19];
 			console.log("Computer chose this: " + randomNum);
 
-		blueCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
-			console.log("Blue Crystal's value is: " + blueCrystal);
+		// blueCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
+		// 	console.log("Blue Crystal's value is: " + blueCrystal);
 
-		orangeCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
-			console.log("Orange Crystal's value is: " + orangeCrystal);	
+		// orangeCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
+		// 	console.log("Orange Crystal's value is: " + orangeCrystal);	
 
-		greenCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
-			console.log("Green Crystal's value is: " + greenCrystal);
+		// greenCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
+		// 	console.log("Green Crystal's value is: " + greenCrystal);
 
-		redCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
-			console.log("Red Crystal's value is: " + redCrystal);
+		// redCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
+		// 	console.log("Red Crystal's value is: " + redCrystal);
 
-		var crystalNumbers = [blueCrystal, orangeCrystal, greenCrystal, redCrystal]	
+		// var crystalNumbers = [blueCrystal, orangeCrystal, greenCrystal, redCrystal]	
 
 			$("#targetscore").text(randomNum);
 
+			// for (var i = 0; i < crystalNumbers.length; i++) {
+			// 	crystalNumbers[i] = secretNumber[Math.floor(Math.random() * secretNumber.length)];
+			// 	console.log(crystalNumbers[i]);
+			// }
+
 			for (var i = 0; i < crystalNumbers.length; i++) {
 
-				imageCrystal = $("#crystals img");
+				// crystalNumbers[i] = secretNumber[Math.floor(Math.random() * secretNumber.length)];
+				// console.log(crystalNumbers[i]);
 
-				imageCrystal.addClass("crystal-image");
+				imageCrystal = crystalNumbers[i];
+
+				// imageCrystal.addClass("crystal-image");
 
 				// imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
 
-				imageCrystal.attr("data-crystalvalue", crystalNumbers[i]);
+				imageCrystal.attr("data-crystalvalue", secretNumber[Math.floor(Math.random() * secretNumber.length)]);
 				console.log(crystalNumbers[i]);
-				
+				console.log(imageCrystal);
+	
 
-				$(".crystal-image").append(imageCrystal);
-  }
+				// $(".crystal-image").append(imageCrystal);
+  			}
 
-
-
+});
 			// For each iteration, we will create an imageCrystal
 			
 
@@ -79,12 +91,13 @@ $( document ).ready(function() {
     		// This data attribute will be set equal to the array value.
     		
 
-		// yourSum = blueCrystal + orangeCrystal + greenCrystal +redCrystal;
 
 		// On click event to generate random #'s for each crystal
 		$(".crystal-image").on("click", function() {
+
+				// console.log($(this));
 			
-				var crystalValue = ($(this).attr("data-crystalvalue"));
+				crystalValue = ($(this).attr("data-crystalvalue"));
     			crystalValue = parseInt(crystalValue);
 
 
@@ -100,7 +113,13 @@ $( document ).ready(function() {
      			$("#losses").text(lossesCounter);
     }
 			})	
-    	});
+    	// });
+
+
+
+
+
+
 
   //   	$("#orange").on("click", function() {
 		// })
