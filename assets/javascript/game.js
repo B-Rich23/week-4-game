@@ -12,9 +12,11 @@ var lossesCounter = 0;
 // Variable for reset
 var reset= function() {
 	yourSum = 0;
-	randomNum = [Math.floor(Math.random() * 101) + 19];
-	console.log("Computer chose this: " + randomNum);
-	$("#targetscore").text(randomNum);
+	initialize();
+	// crystalValue = 0;
+	// randomNum = [Math.floor(Math.random() * 101) + 19];
+	// console.log("Computer chose this: " + randomNum);
+	// $("#targetscore").text(randomNum);
 };
 
 // Undefined variable for random number
@@ -43,9 +45,12 @@ var crystalNumbers = [blueCrystal, orangeCrystal, greenCrystal, redCrystal]
 
 
 // Event handler that starts game
-$( document ).ready(function() {
+$( document ).ready(initialize);
+		// Initialize function since .ready method only loads once
+		function initialize() {
   		
-		randomNum = [Math.floor(Math.random() * 101) + 19];
+  			// Target score is randomly generated
+			randomNum = [Math.floor(Math.random() * 101) + 19];
 			console.log("Computer chose this: " + randomNum);
 			$("#targetscore").text(randomNum);
 
@@ -60,8 +65,7 @@ $( document ).ready(function() {
 				console.log(crystalNumbers[i]);
 				console.log(imageCrystal);	
   			}
-
-});
+};
 			
 	
 		// On click event to generate random #'s for each crystal
