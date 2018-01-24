@@ -4,15 +4,40 @@
 		<meta charset="utf-8">
 		<title>Crystals Collector Game</title>
 		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	</head>
 
 	<body>
 		<!-- This div will contain the header -->
-		<header><h1>Crystals Collector!</h1></header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 header">
+					<h1 class="display-4">Crystals Collector!</h1>
+				</div>
+			</div>
+		</div>
+		
 
 		<!-- This div will contain the game instructions -->
-		<div>
+		<div class="row">
+			<div class="col-md-5 header">
+				<div class="jumbotron">
+  					<h5 class="display-7">Rules of the Game:</h5>
+					<ul class="list-group list-group-flush">
+						  <li class="list-group-item">You will be given a random number at the start of the game.</li>
+						  <li class="list-group-item">here are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.</li>
+						  <li class="list-group-item">You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.</li>
+						  <li class="list-group-item">The value of each crystal is hidden from you until you click on it.</li>
+						  <li class="list-group-item">Each time when the game starts, the game will change the values of each crystal.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+
+<!-- 		<div>
 			<h2 >Rules of the Game</h2>
 			<br>
 			<p>You will be given a random number at the start of the game. 
@@ -31,47 +56,116 @@
 			</p>
 			<br>
 		</div>
-
-		<!-- This div will include the random target number that is generated each game -->
-		<div>
-			<h3>Target Score: <span id="targetscore">0</span>
-  			</h3>
+ -->
+		<!-- This div will include the random target number that is generated each game, the sum total of the user's guesses, and the wins/losses counters -->
+		<div class="container">
+			<div class="row counters">
+				<div class="col-md-2">
+					<div class="card">
+      					<div class="card-body">
+					        <h5 class="card-title">Crystal Target Score:</h5>
+					        	<p></p>
+					        	<p><h5><span id="targetscore">0</span></h5></p>
+					        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+     					 </div>
+    				</div>
+					<!-- <h5>Target Score: <span id="targetscore">0</span> -->
+  					<!-- </h5> -->
+				</div>
+				<div class="col-md-2 total">
+				<div class="card">
+	      			<div class="card-body">
+						<h5 class="card-title">Your Crystal Total is:</h5>
+						<p></p>
+						<p></p>
+						<p class="card-text"><h5><span id="sum">0</span></h5>
+	     			</div>
+	    		</div>
+			</div>
+				<div class="col-md-2">
+					<div class="card">
+      					<div class="card-body">
+					        <h5 class="card-title">Your Score:</h5>
+					        <p class="card-text"><h5>Wins: <span id="wins">0</span></h5></p>
+					        <p class="card-text"><h5>Losses: <span id="losses">0</span></h5></p>
+     					 </div>
+    				</div>
+					<!-- <h5>Your Score:  -->
+  					<!-- </h5> -->
+<!--   					<br>
+  					<h5>Wins: <span id="wins">0</span></h5>
+					<br>
+					<h5>Losses: <span id="losses">0</span></h5>
+ 					<br>
+ -->				</div>
+			</div>
 		</div>
 
+<!-- 		<div>
+			<h5>Target Score: <span id="targetscore">0</span>
+  			</h5>
+		</div>
+ -->
 		<!-- This div contains the wins/losses counters -->
-		<div>
-			<h3>Your Score: 
-  			</h3>
+		<!-- <div>
+			<h5>Your Score: 
+  			</h5>
   			<br>
-  			<h3>Wins: <span id="wins">0</span></h3>
+  			<h5>Wins: <span id="wins">0</span></h5>
 			<br>
-			<h3>Losses: <span id="losses">0</span></h3>
+			<h5>Losses: <span id="losses">0</span></h5>
  			<br>
-		</div>
+		</div> -->
 
 
 		<!-- This div contains the four crystal images -->
-		<div id="crystals">
+		<!-- <div class="modal-body"> -->
+			<div class="container-fluid">
+				<div class="row placement">
+	    			<div class="col-md-5 images">
+			 			<div class="crystals">
+							<button><img id="crys1" class="crystal-image" src="assets/images/blue crystal.png" alt="blue crystal"></button>
+							<button><img id="crys2" class="crystal-image" src="assets/images/orange crystal.png" alt="orange crystal"></button>
+							<button><img id="crys3" class="crystal-image" src="assets/images/green crystal.png" alt="green crystal"></button>
+							<button><img id="crys4" class="crystal-image" src="assets/images/red crystal.png" alt="red crystal"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- </div> -->
+		<!-- <div id="crystals"> -->
 		<!-- <div class="crystals"> -->
-			<img id="crys1" class="crystal-image" src="assets/images/blue crystal.png" alt="blue crystal">
+<!-- 			<img id="crys1" class="crystal-image" src="assets/images/blue crystal.png" alt="blue crystal">
 			<img id="crys2" class="crystal-image" src="assets/images/orange crystal.png" alt="orange crystal">
 			<img id="crys3" class="crystal-image" src="assets/images/green crystal.png" alt="green crystal">
 			<img id="crys4" class="crystal-image" src="assets/images/red crystal.png" alt="red crystal">
 		</div>
-
+ -->
 		
 
 		<!-- This div contains the this is your total sum line -->
-		<div>
-			<p><h3>Your Crystal Total is:</h3></p>
+<!-- 		<div class="container-fluid">
+			<div class="col-md-3 total">
+				<div class="card">
+	      			<div class="card-body">
+						<h5 class="card-title">Your Crystal Total is:</h5>
+						<p class="card-text"><h5><span id="sum">0</span></h5>
+	     			</div>
+	    		</div>
+			</div>
 		</div>
-
+ --><!-- 			<p><h5>Your Crystal Total is:</h5></p>
+		</div>
+ -->
 		<!-- This div contains your running sum total during each game -->
-		<div>
-			<h3><span id="sum">0</span>
-  			</h3>
+<!-- 		<div>
+			<h5><span id="sum">0</span>
+  			</h5>
 		</div>
-
+ -->		
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh5U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/javascript/game.js"></script>
 	</body>

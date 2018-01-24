@@ -11,6 +11,7 @@ var lossesCounter = 0;
 
 // Variable for reset
 var reset= function() {
+	yourSum = 0;
 
 };
 
@@ -42,45 +43,22 @@ $( document ).ready(function() {
   		
 		randomNum = [Math.floor(Math.random() * 101) + 19];
 			console.log("Computer chose this: " + randomNum);
-
-		// blueCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
-		// 	console.log("Blue Crystal's value is: " + blueCrystal);
-
-		// orangeCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
-		// 	console.log("Orange Crystal's value is: " + orangeCrystal);	
-
-		// greenCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
-		// 	console.log("Green Crystal's value is: " + greenCrystal);
-
-		// redCrystal = secretNumber[Math.floor(Math.random() * secretNumber.length)];
-		// 	console.log("Red Crystal's value is: " + redCrystal);
-
-		// var crystalNumbers = [blueCrystal, orangeCrystal, greenCrystal, redCrystal]	
-
 			$("#targetscore").text(randomNum);
 
-			// for (var i = 0; i < crystalNumbers.length; i++) {
-			// 	crystalNumbers[i] = secretNumber[Math.floor(Math.random() * secretNumber.length)];
-			// 	console.log(crystalNumbers[i]);
-			// }
 
 			for (var i = 0; i < crystalNumbers.length; i++) {
 
-				// crystalNumbers[i] = secretNumber[Math.floor(Math.random() * secretNumber.length)];
-				// console.log(crystalNumbers[i]);
+	
 
 				imageCrystal = crystalNumbers[i];
 
-				// imageCrystal.addClass("crystal-image");
-
-				// imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
 
 				imageCrystal.attr("data-crystalvalue", secretNumber[Math.floor(Math.random() * secretNumber.length)]);
 				console.log(crystalNumbers[i]);
 				console.log(imageCrystal);
 	
 
-				// $(".crystal-image").append(imageCrystal);
+				
   			}
 
 });
@@ -113,7 +91,7 @@ $( document ).ready(function() {
      			$("#losses").text(lossesCounter);
     }
 			})	
-    	// });
+    
 
 
 
