@@ -35,8 +35,10 @@ var redCrystal = $('#crys4');
 // Undefined variable result
 var imageCrystal;
 
+// Undefined variable crystalValue
 var crystalValue;
 
+// Array crystalNumbers
 var crystalNumbers = [blueCrystal, orangeCrystal, greenCrystal, redCrystal]	
 
 
@@ -47,43 +49,33 @@ $( document ).ready(function() {
 			console.log("Computer chose this: " + randomNum);
 			$("#targetscore").text(randomNum);
 
-
+			// For each iteration of crystalNumbers, we will create a secret # value that is given to each crystal
 			for (var i = 0; i < crystalNumbers.length; i++) {
-
-	
 
 				imageCrystal = crystalNumbers[i];
 
-
+				// Each imageCrystal will be given a data attribute called data-crystalValue.
+    			// This data attribute will be set equal to the array value.
 				imageCrystal.attr("data-crystalvalue", secretNumber[Math.floor(Math.random() * secretNumber.length)]);
 				console.log(crystalNumbers[i]);
-				console.log(imageCrystal);
-	
-
-				
+				console.log(imageCrystal);	
   			}
 
 });
-			// For each iteration, we will create an imageCrystal
 			
-
-			// Each imageCrystal will be given a data attribute called data-crystalValue.
-    		// This data attribute will be set equal to the array value.
-    		
-
-
+	
 		// On click event to generate random #'s for each crystal
 		$(".crystal-image").on("click", function() {
 
-				// console.log($(this));
-			
+				// Parse crystalValue string into integer
 				crystalValue = ($(this).attr("data-crystalvalue"));
     			crystalValue = parseInt(crystalValue);
 
-
+    			// Increases the sum of the user clicks by each crystal's click value
 				yourSum +=crystalValue;
 				$("#sum").text(yourSum);
 				
+				// Conditional to increase wins counter and reset the game if the user sum equals the target number, or to increase losses counter and reset the game if the user sum exceeds the target number
 				if (yourSum == randomNum) {
 				winsCounter ++;
 				$("#wins").text(winsCounter);
@@ -96,23 +88,3 @@ $( document ).ready(function() {
     }
 			})	
     
-
-
-
-
-
-
-
-  //   	$("#orange").on("click", function() {
-		// })
-  //   	$("#green").on("click", function() {
-		// 
-		// 
-		// })
-		// $("#red").on("click", function() {
-		// 
-		// })
-
-  // });
-  	
-// });
