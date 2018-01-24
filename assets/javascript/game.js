@@ -12,7 +12,9 @@ var lossesCounter = 0;
 // Variable for reset
 var reset= function() {
 	yourSum = 0;
-
+	randomNum = [Math.floor(Math.random() * 101) + 19];
+	console.log("Computer chose this: " + randomNum);
+	$("#targetscore").text(randomNum);
 };
 
 // Undefined variable for random number
@@ -85,10 +87,12 @@ $( document ).ready(function() {
 				if (yourSum == randomNum) {
 				winsCounter ++;
 				$("#wins").text(winsCounter);
+				reset();
 				}
 				else if (yourSum >= randomNum) {
      			lossesCounter ++;
      			$("#losses").text(lossesCounter);
+     			reset();
     }
 			})	
     
